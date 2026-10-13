@@ -46,12 +46,12 @@
             <a href="#beranda" class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-amber-500 to-gold-400 p-0.5 shadow-lg">
                     <div class="w-full h-full bg-[#18120e] rounded-full flex items-center justify-center border border-gold-400/50">
-                        <i class="fa-solid font-culture text-gold-400 text-xl font-bold">MG</i>
+                        <i id="navLogoIcon" class="fa-solid font-culture text-gold-400 text-xl font-bold">MG</i>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <span id="navBrandTitle" class="font-culture text-xl font-bold tracking-wider text-gradient-gold">MBAH GIMBAL</span>
-                    <span class="text-[10px] text-amber-200/70 tracking-widest uppercase font-semibold">Budaya & Pariwisata</span>
+                    <span id="navSubTitle" class="text-[10px] text-amber-200/70 tracking-widest uppercase font-semibold">Budaya & Pariwisata</span>
                 </div>
             </a>
 
@@ -70,7 +70,7 @@
     <!-- HERO SECTION -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80" alt="Background" class="w-full h-full object-cover opacity-30 scale-105">
+            <img id="heroBgImage" src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80" alt="Background" class="w-full h-full object-cover opacity-30 scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/80 to-transparent"></div>
         </div>
 
@@ -145,9 +145,9 @@
         <div class="max-w-7xl mx-auto px-4 text-center space-y-6">
             <h2 class="font-serif text-3xl font-bold text-white">Jejaring Sosial Media</h2>
             <div class="flex justify-center gap-4 flex-wrap">
-                <a href="https://instagram.com" target="_blank" class="px-6 py-3 bg-pink-600/10 border border-pink-500 text-pink-400 font-semibold rounded-xl"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://youtube.com" target="_blank" class="px-6 py-3 bg-red-600/10 border border-red-500 text-red-400 font-semibold rounded-xl"><i class="fa-brands fa-youtube"></i> YouTube</a>
-                <a href="https://wa.me/6281234567890" target="_blank" class="px-6 py-3 bg-emerald-600/10 border border-emerald-500 text-emerald-400 font-semibold rounded-xl"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a id="linkIg" href="https://instagram.com" target="_blank" class="px-6 py-3 bg-pink-600/10 border border-pink-500 text-pink-400 font-semibold rounded-xl"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a id="linkYt" href="https://youtube.com" target="_blank" class="px-6 py-3 bg-red-600/10 border border-red-500 text-red-400 font-semibold rounded-xl"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a id="linkWa" href="https://wa.me/6281234567890" target="_blank" class="px-6 py-3 bg-emerald-600/10 border border-emerald-500 text-emerald-400 font-semibold rounded-xl"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
@@ -156,33 +156,58 @@
     <section id="kontak" class="py-20 bg-[#121212]">
         <div class="max-w-3xl mx-auto px-4 text-center space-y-6">
             <h2 class="font-serif text-3xl font-bold text-white">Hubungi Mbah Gimbal</h2>
-            <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg">
+            <a id="btnContactWa" href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg">
                 <i class="fa-brands fa-whatsapp text-2xl"></i>
                 <span>Chat Langsung via WhatsApp</span>
             </a>
         </div>
     </section>
 
-    <!-- PANEL ADMIN TERSEMBUNYI (Hanya muncul saat tekan Ctrl + Shift + A) -->
+    <!-- PANEL ADMIN RAHASIA (Tekan Ctrl + Shift + A) -->
     <div id="secretAdminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="w-full max-w-xl bg-[#18120e] border border-yellow-500/30 rounded-3xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+        <div class="w-full max-w-2xl bg-[#18120e] border border-yellow-500/30 rounded-3xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center border-b border-yellow-500/20 pb-4">
                 <h3 class="text-xl font-bold text-yellow-400"><i class="fa-solid fa-user-secret"></i> Panel Admin Rahasia Mbah Gimbal</h3>
                 <button onclick="toggleSecretAdmin()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
-            <!-- Edit Profil -->
+            <!-- 1. Edit Identitas & Logo -->
             <div class="space-y-3">
-                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">1. Edit Judul & Profil Utama</h4>
-                <input type="text" id="editSiteTitle" placeholder="Judul Website" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
-                <textarea id="editBio" placeholder="Bio / Keterangan Profil" rows="2" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3"></textarea>
-                <input type="url" id="editProfilePic" placeholder="URL Foto Profil" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
-                <button onclick="saveConfig()" class="w-full py-2.5 bg-yellow-500 text-black font-bold text-xs rounded-lg">Simpan Perubahan Profil</button>
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">1. Logo, Judul & Brand</h4>
+                <input type="text" id="editBrandName" placeholder="Nama Brand (Contoh: MBAH GIMBAL)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="text" id="editSubTitle" placeholder="Sub Judul Navigasi (Contoh: Budaya & Pariwisata)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="text" id="editLogoText" placeholder="Inisial Logo (Contoh: MG)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="text" id="editSiteTitle" placeholder="Meta Title Browser" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
             </div>
 
-            <!-- Tambah Foto -->
+            <!-- 2. Edit Cover / Hero Section -->
             <div class="space-y-3 pt-4 border-t border-yellow-500/20">
-                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">2. Tambah Galeri Foto Baru</h4>
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">2. Cover & Teks Utama (Hero)</h4>
+                <input type="text" id="editBadge" placeholder="Badge Atas (Contoh: Official Portfolio)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <textarea id="editHeroTitle" placeholder="Judul Besar Cover" rows="2" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3"></textarea>
+                <textarea id="editHeroDesc" placeholder="Deskripsi Singkat Cover" rows="2" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3"></textarea>
+                <input type="url" id="editHeroBg" placeholder="URL Background Cover / Banner" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+            </div>
+
+            <!-- 3. Edit Profil & Bio -->
+            <div class="space-y-3 pt-4 border-t border-yellow-500/20">
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">3. Foto Profil & Bio Tentang</h4>
+                <textarea id="editBio" placeholder="Bio / Keterangan Profil" rows="3" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3"></textarea>
+                <input type="url" id="editProfilePic" placeholder="URL Foto Profil" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+            </div>
+
+            <!-- 4. Edit Sosial Media & WhatsApp -->
+            <div class="space-y-3 pt-4 border-t border-yellow-500/20">
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">4. Tautan Sosial Media & Kontak</h4>
+                <input type="url" id="editIg" placeholder="Link Instagram" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="url" id="editYt" placeholder="Link YouTube" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="text" id="editWa" placeholder="Nomor WhatsApp (Contoh: 6281234567890)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <button onclick="saveConfig()" class="w-full py-3 bg-yellow-500 text-black font-bold text-xs rounded-lg shadow-lg">Simpan Semua Perubahan Pengaturan</button>
+            </div>
+
+            <!-- 5. Tambah Konten Galeri & Video -->
+            <div class="space-y-3 pt-4 border-t border-yellow-500/20">
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">5. Tambah Galeri Foto Baru</h4>
                 <input type="text" id="photoTitle" placeholder="Judul Foto" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
                 <select id="photoCategory" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
                     <option value="kebudayaan">Kebudayaan</option>
@@ -190,7 +215,7 @@
                 </select>
                 <input type="url" id="photoUrl" placeholder="URL Gambar Foto" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
                 <input type="text" id="photoDesc" placeholder="Lokasi (Contoh: Yogyakarta)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
-                <button onclick="addPhoto()" class="w-full py-2.5 bg-yellow-500 text-black font-bold text-xs rounded-lg">Tambah Foto Baru</button>
+                <button onclick="addPhoto()" class="w-full py-2.5 bg-yellow-600 text-white font-bold text-xs rounded-lg">Tambah Foto</button>
             </div>
 
             <div class="text-center pt-2">
@@ -200,14 +225,20 @@
     </div>
 
     <script>
-        // Data Storage & Render Logic
         let config = JSON.parse(localStorage.getItem('mg_config')) || {
             title: "MBAH GIMBAL - Kebudayaan, Adat Tradisi & Pariwisata Nusantara",
             brandName: "MBAH GIMBAL",
+            subTitle: "Budaya & Pariwisata",
+            logoText: "MG",
             badge: "Official Portfolio & Cultural Hub",
-            heroTitle: "Menjaga Tradisi, Merawat Budaya, Menjelajah Nusantara",
-            bio: "Salam Budaya! Saya Mbah Gimbal, praktisi kebudayaan, pencinta tradisi adat, serta penggiat pariwisata Nusantara.",
-            profilePic: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+            heroTitle: "Menjaga <span class=\"text-gradient-gold italic\">Tradisi</span>, Merawat Budaya, Menjelajah Nusantara",
+            heroDesc: "Selamat Datang di Website Resmi MBAH GIMBAL — Praktisi Kebudayaan Adat Tradisi, Pecinta Seni Lokal & Penggiat Pariwisata.",
+            heroBg: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80",
+            bio: "Salam Budaya! Saya Mbah Gimbal, seorang praktisi kebudayaan, pencinta tradisi adat, serta penggiat pariwisata Nusantara.",
+            profilePic: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+            ig: "https://instagram.com",
+            yt: "https://youtube.com",
+            wa: "6281234567890"
         };
 
         let photos = JSON.parse(localStorage.getItem('mg_photos')) || [
@@ -222,19 +253,38 @@
             { id: 1, title: "Menyelami Makna Filosofi Budaya Nusantara", tag: "Adat Tradisi", content: "Kebudayaan Nusantara menyimpan hikmah mendalam..." }
         ];
 
-        // Terapkan ke Tampilan Utama
+        // Terapkan Konfigurasi ke Tampilan
         document.getElementById('metaTitle').innerText = config.title;
         document.getElementById('navBrandTitle').innerText = config.brandName;
+        document.getElementById('navSubTitle').innerText = config.subTitle;
+        document.getElementById('navLogoIcon').innerText = config.logoText;
         document.getElementById('heroBadge').innerText = config.badge;
         document.getElementById('heroMainTitle').innerHTML = config.heroTitle;
+        document.getElementById('heroDescription').innerText = config.heroDesc;
+        document.getElementById('heroBgImage').src = config.heroBg;
         document.getElementById('profileBioDisplay').innerText = config.bio;
         document.getElementById('profileImageDisplay').src = config.profilePic;
         document.getElementById('profileNameDisplay').innerText = config.brandName;
+        
+        document.getElementById('linkIg').href = config.ig;
+        document.getElementById('linkYt').href = config.yt;
+        document.getElementById('linkWa').href = `https://wa.me/${config.wa}`;
+        document.getElementById('btnContactWa').href = `https://wa.me/${config.wa}`;
 
-        // Isi Form Admin
+        // Isi Form di Panel Admin
+        document.getElementById('editBrandName').value = config.brandName;
+        document.getElementById('editSubTitle').value = config.subTitle;
+        document.getElementById('editLogoText').value = config.logoText;
         document.getElementById('editSiteTitle').value = config.title;
+        document.getElementById('editBadge').value = config.badge;
+        document.getElementById('editHeroTitle').value = config.heroTitle;
+        document.getElementById('editHeroDesc').value = config.heroDesc;
+        document.getElementById('editHeroBg').value = config.heroBg;
         document.getElementById('editBio').value = config.bio;
         document.getElementById('editProfilePic').value = config.profilePic;
+        document.getElementById('editIg').value = config.ig;
+        document.getElementById('editYt').value = config.yt;
+        document.getElementById('editWa').value = config.wa;
 
         // Render Galeri Foto
         const photoGrid = document.getElementById('photoGrid');
@@ -271,7 +321,7 @@
                 </div>`;
         });
 
-        // Shortcut Rahasia (Tekan Ctrl + Shift + A di keyboard)
+        // Shortcut Tombol Rahasia (Ctrl + Shift + A)
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'A') {
                 e.preventDefault();
@@ -286,11 +336,22 @@
         }
 
         function saveConfig() {
+            config.brandName = document.getElementById('editBrandName').value;
+            config.subTitle = document.getElementById('editSubTitle').value;
+            config.logoText = document.getElementById('editLogoText').value;
             config.title = document.getElementById('editSiteTitle').value;
+            config.badge = document.getElementById('editBadge').value;
+            config.heroTitle = document.getElementById('editHeroTitle').value;
+            config.heroDesc = document.getElementById('editHeroDesc').value;
+            config.heroBg = document.getElementById('editHeroBg').value;
             config.bio = document.getElementById('editBio').value;
             config.profilePic = document.getElementById('editProfilePic').value;
+            config.ig = document.getElementById('editIg').value;
+            config.yt = document.getElementById('editYt').value;
+            config.wa = document.getElementById('editWa').value;
+
             localStorage.setItem('mg_config', JSON.stringify(config));
-            alert('Profil berhasil disimpan!');
+            alert('Semua perubahan profil dan cover berhasil disimpan!');
             location.reload();
         }
 
