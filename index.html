@@ -3,27 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBAH GIMBAL - Kebudayaan, Adat Tradisi & Pariwisata Nusantara</title>
+    <title id="metaTitle">MBAH GIMBAL - Kebudayaan, Adat Tradisi & Pariwisata Nusantara</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            400: '#f6d365',
-                            500: '#d4af37',
-                            600: '#aa7c11',
-                            700: '#855b08',
-                        },
-                        amber: {
-                            850: '#532305',
-                            900: '#381602',
-                        },
+                        gold: { 400: '#f6d365', 500: '#d4af37', 600: '#aa7c11', 700: '#855b08' },
                         darkwood: '#18120e',
                         deepcharcoal: '#121212'
                     },
@@ -38,927 +28,284 @@
     </script>
 
     <style>
-        /* Custom scrollbar & batik pattern overlays */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #121212;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #855b08;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
-        }
-        .bg-batik-pattern {
-            background-color: #121212;
-            background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #121212 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-            background-opacity: 0.05;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #855b08; border-radius: 4px; }
         .text-gradient-gold {
             background: linear-gradient(135deg, #FFE259 0%, #FFA751 50%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border-glow {
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-        }
     </style>
 </head>
 <body class="bg-[#121212] text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-black">
 
-    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-[#121212]/90 backdrop-blur-md border-b border-gold-500/20" id="mainHeader">
+    <!-- NAVBAR (Bersih tanpa tombol admin) -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-[#121212]/90 backdrop-blur-md border-b border-gold-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#beranda" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-amber-500 to-gold-400 p-0.5 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <a href="#beranda" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-amber-500 to-gold-400 p-0.5 shadow-lg">
                     <div class="w-full h-full bg-[#18120e] rounded-full flex items-center justify-center border border-gold-400/50">
                         <i class="fa-solid font-culture text-gold-400 text-xl font-bold">MG</i>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-culture text-xl font-bold tracking-wider text-gradient-gold">MBAH GIMBAL</span>
+                    <span id="navBrandTitle" class="font-culture text-xl font-bold tracking-wider text-gradient-gold">MBAH GIMBAL</span>
                     <span class="text-[10px] text-amber-200/70 tracking-widest uppercase font-semibold">Budaya & Pariwisata</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
-                <a href="#beranda" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Beranda</a>
-                <a href="#tentang" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Tentang Mbah Gimbal</a>
-                <a href="#galeri-foto" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Galeri Foto</a>
-                <a href="#galeri-video" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Galeri Video</a>
-                <a href="#artikel" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Artikel & Tradisi</a>
-                <a href="#sosmed" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Jejaring Sosmed</a>
-                <a href="#kontak" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 hover:bg-gold-500/10 rounded-lg transition-colors">Kontak</a>
+            <nav class="hidden lg:flex items-center space-x-2">
+                <a href="#beranda" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Beranda</a>
+                <a href="#tentang" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Tentang</a>
+                <a href="#galeri-foto" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Galeri Foto</a>
+                <a href="#galeri-video" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Galeri Video</a>
+                <a href="#artikel" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Artikel</a>
+                <a href="#sosmed" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Sosmed</a>
+                <a href="#kontak" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Kontak</a>
             </nav>
-
-            <!-- Admin Button & Mobile Menu Toggle -->
-            <div class="flex items-center gap-3">
-                <button onclick="toggleAdminDrawer()" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-gold-600 to-amber-600 text-black px-4 py-2 rounded-xl font-semibold text-xs uppercase tracking-wider hover:from-gold-500 hover:to-amber-500 transition-all shadow-md hover:shadow-gold-500/20 active:scale-95">
-                    <i class="fa-solid fa-plus-circle text-sm"></i>
-                    <span>Kelola Konten</span>
-                </button>
-                <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-300 hover:text-gold-400 p-2 focus:outline-none" aria-label="Toggle Navigation">
-                    <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#18120e] border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-2">
-            <a href="#beranda" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Beranda</a>
-            <a href="#tentang" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Tentang Mbah Gimbal</a>
-            <a href="#galeri-foto" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Galeri Foto</a>
-            <a href="#galeri-video" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Galeri Video</a>
-            <a href="#artikel" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Artikel & Tradisi</a>
-            <a href="#sosmed" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Jejaring Sosmed</a>
-            <a href="#kontak" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-200 hover:bg-gold-500/10 hover:text-gold-400">Kontak</a>
-            <div class="pt-2 sm:hidden">
-                <button onclick="toggleAdminDrawer(); toggleMobileMenu();" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-gold-600 to-amber-600 text-black px-4 py-2.5 rounded-xl font-semibold text-sm uppercase tracking-wider">
-                    <i class="fa-solid fa-plus-circle"></i>
-                    <span>Kelola Konten</span>
-                </button>
-            </div>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        <!-- Background Overlay & Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80" alt="Kebudayaan & Wisata Nusantara" class="w-full h-full object-cover opacity-30 scale-105 animate-pulse" style="animation-duration: 12s;">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80" alt="Background" class="w-full h-full object-cover opacity-30 scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#121212] via-transparent to-[#121212]"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-lg backdrop-blur-sm">
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wide uppercase">
                 <i class="fa-solid fa-om"></i>
-                <span>Official Portfolio & Cultural Media Hub</span>
+                <span id="heroBadge">Official Portfolio & Cultural Hub</span>
             </div>
-
-            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-                Menjaga <span class="text-gradient-gold italic font-normal">Tradisi</span>, Merawat Budaya, <br class="hidden sm:inline">Menjelajah <span class="text-amber-400">Pesona Wisata</span>
+            <h1 id="heroMainTitle" class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight">
+                Menjaga <span class="text-gradient-gold italic">Tradisi</span>, Merawat Budaya, Menjelajah Nusantara
             </h1>
-
-            <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-                Selamat Datang di Website Resmi <strong class="text-gold-400 font-semibold">MBAH GIMBAL</strong> — Dedicated Praktisi Kebudayaan Adat Tradisi, Pecinta Seni Lokal & Penggiat Eksplorasi Pariwisata Nusantara.
+            <p id="heroDescription" class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+                Selamat Datang di Website Resmi MBAH GIMBAL — Praktisi Kebudayaan Adat Tradisi, Pecinta Seni Lokal & Penggiat Pariwisata.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#galeri-foto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-600 text-black font-bold text-base shadow-xl shadow-gold-500/20 hover:scale-105 transition-all flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-compass text-lg"></i>
-                    <span>Jelajahi Karya & Wisata</span>
-                </a>
-                <a href="#kontak" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#18120e] hover:bg-gold-500/10 text-gold-400 border border-gold-500/40 font-bold text-base transition-all flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-handshake text-lg"></i>
-                    <span>Hubungi / Kolaborasi</span>
-                </a>
-            </div>
-
-            <!-- Scroll indicator -->
-            <div class="pt-12 flex flex-col items-center gap-2 text-gray-400 animate-bounce">
-                <span class="text-xs uppercase tracking-widest text-gold-500/80">Gulir Ke Bawah</span>
-                <i class="fa-solid fa-chevron-down text-sm"></i>
-            </div>
         </div>
     </section>
 
+    <!-- TENTANG / PROFIL -->
     <section id="tentang" class="py-20 relative bg-darkwood border-y border-gold-500/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Profile Image / Avatar Frame -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Decorative glow -->
-                        <div class="absolute -inset-2 bg-gradient-to-r from-gold-600 to-amber-700 rounded-3xl blur-xl opacity-30"></div>
-                        <div class="relative bg-[#121212] p-3 rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Mbah Gimbal Profile" class="w-full h-[420px] object-cover rounded-2xl filter brightness-95 hover:scale-105 transition-transform duration-500">
-                            <div class="absolute bottom-6 left-6 right-6 bg-[#18120e]/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/30">
-                                <p class="text-gold-400 font-culture text-sm font-bold">MBAH GIMBAL</p>
-                                <p class="text-xs text-gray-300">Pengabdi Kebudayaan & Penggiat Wisata Lokal</p>
-                            </div>
+                    <div class="relative bg-[#121212] p-3 rounded-3xl border border-gold-500/30 shadow-2xl">
+                        <img id="profileImageDisplay" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Profil" class="w-full h-[400px] object-cover rounded-2xl">
+                        <div class="absolute bottom-6 left-6 right-6 bg-[#18120e]/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/30">
+                            <p class="text-gold-400 font-culture text-sm font-bold" id="profileNameDisplay">MBAH GIMBAL</p>
+                            <p class="text-xs text-gray-300" id="profileSubDisplay">Praktisi Budaya & Pariwisata</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Text Info -->
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-widest uppercase">
-                        <i class="fa-solid fa-feather-pointed"></i>
-                        <span>Tentang Sosok Mbah Gimbal</span>
-                    </div>
-
+                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block">
+                        <i class="fa-solid fa-feather-pointed"></i> Tentang Sosok Mbah Gimbal
+                    </span>
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
                         Melestarikan Warisan Leluhur, Menginspirasi Lewat Keindahan Nusantara
                     </h2>
-
-                    <p class="text-gray-300 text-base leading-relaxed">
-                        Salam Budaya! Saya **Mbah Gimbal**, seorang praktisi kebudayaan, pencinta tradisi adat, serta penggiat pariwisata Nusantara. Melalui dedikasi bertahun-tahun, saya aktif mendokumentasikan ritual adat, seni pertunjukan tradisional, hingga keajaiban destinasi wisata tersembunyi di pelosok tanah air.
+                    <p id="profileBioDisplay" class="text-gray-300 text-base leading-relaxed">
+                        Salam Budaya! Saya Mbah Gimbal, seorang praktisi kebudayaan, pencinta tradisi adat, serta penggiat pariwisata Nusantara.
                     </p>
-
-                    <p class="text-gray-300 text-base leading-relaxed">
-                        Fokus utama saya adalah menjembatani generasi muda dengan akar kebudayaan lokal agar tidak punah ditelan zaman, sekaligus mempromosikan potensi pariwisata berbasis kearifan lokal (*community-based tourism*).
-                    </p>
-
-                    <!-- Key Stats Counter Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-                        <div class="bg-[#121212] p-4 rounded-xl border border-gold-500/20 text-center">
-                            <span class="block text-2xl sm:text-3xl font-bold text-gold-400 font-culture">120+</span>
-                            <span class="text-xs text-gray-400 mt-1 block">Acara Budaya</span>
-                        </div>
-                        <div class="bg-[#121212] p-4 rounded-xl border border-gold-500/20 text-center">
-                            <span class="block text-2xl sm:text-3xl font-bold text-gold-400 font-culture">85+</span>
-                            <span class="text-xs text-gray-400 mt-1 block">Destinasi Jelajah</span>
-                        </div>
-                        <div class="bg-[#121212] p-4 rounded-xl border border-gold-500/20 text-center">
-                            <span class="block text-2xl sm:text-3xl font-bold text-gold-400 font-culture">500+</span>
-                            <span class="text-xs text-gray-400 mt-1 block">Dokumentasi</span>
-                        </div>
-                        <div class="bg-[#121212] p-4 rounded-xl border border-gold-500/20 text-center">
-                            <span class="block text-2xl sm:text-3xl font-bold text-gold-400 font-culture">15+</span>
-                            <span class="text-xs text-gray-400 mt-1 block">Komunitas Tradisi</span>
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="galeri-foto" class="py-20 bg-[#121212] relative">
+    <!-- GALERI FOTO -->
+    <section id="galeri-foto" class="py-20 bg-[#121212]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-1">
-                        <i class="fa-solid fa-camera-retro"></i> Galeri Foto Dokumentasi
-                    </span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Kebudayaan, Adat & Wisata</h2>
-                </div>
-
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap gap-2" id="photoFilters">
-                    <button onclick="filterPhotos('all')" class="photo-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gold-500 text-black shadow-md transition-all">Semua</button>
-                    <button onclick="filterPhotos('kebudayaan')" class="photo-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#18120e] text-gray-300 hover:text-gold-400 border border-gold-500/20 transition-all">Kebudayaan & Adat</button>
-                    <button onclick="filterPhotos('pariwisata')" class="photo-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#18120e] text-gray-300 hover:text-gold-400 border border-gold-500/20 transition-all">Pariwisata & Alam</button>
-                    <button onclick="filterPhotos('tradisi')" class="photo-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#18120e] text-gray-300 hover:text-gold-400 border border-gold-500/20 transition-all">Dokumentasi Tradisi</button>
-                </div>
-            </div>
-
-            <!-- Photos Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photoGrid">
-                <!-- Dynamic Items Inserted via JS -->
-            </div>
-
+            <h2 class="font-serif text-3xl font-bold text-white">Galeri Foto Kebudayaan & Wisata</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photoGrid"></div>
         </div>
     </section>
 
-    <section id="galeri-video" class="py-20 bg-darkwood border-t border-gold-500/10 relative">
+    <!-- GALERI VIDEO -->
+    <section id="galeri-video" class="py-20 bg-darkwood border-t border-gold-500/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase">
-                    <i class="fa-solid fa-clapperboard"></i> Galeri Media & Video
-                </span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Video Kebudayaan & Traveling</h2>
-                <p class="text-gray-400 text-sm">Simak rekaman momen ritual adat, pagelaran seni, dan perjalanan menjelajah tempat-tempat eksotis.</p>
-            </div>
-
-            <!-- Video Filter -->
-            <div class="flex justify-center gap-3" id="videoFilters">
-                <button onclick="filterVideos('all')" class="video-filter-btn active px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gold-500 text-black shadow-md">Semua Video</button>
-                <button onclick="filterVideos('budaya')" class="video-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#121212] text-gray-300 hover:text-gold-400 border border-gold-500/20">Video Budaya</button>
-                <button onclick="filterVideos('traveling')" class="video-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#121212] text-gray-300 hover:text-gold-400 border border-gold-500/20">Video Traveling</button>
-            </div>
-
-            <!-- Video Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="videoGrid">
-                <!-- Dynamic Items Inserted via JS -->
-            </div>
-
+            <h2 class="font-serif text-3xl font-bold text-white">Video Dokumenter & Traveling</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="videoGrid"></div>
         </div>
     </section>
 
-    <section id="artikel" class="py-20 bg-[#121212] relative">
+    <!-- ARTIKEL -->
+    <section id="artikel" class="py-20 bg-[#121212]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-1">
-                        <i class="fa-solid fa-book-open"></i> Catatan Mbah Gimbal
-                    </span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Artikel Budaya & Wisata</h2>
-                </div>
-
-                <!-- Search Input -->
-                <div class="relative w-full md:w-72">
-                    <input type="text" id="articleSearch" onkeyup="searchArticles()" placeholder="Cari artikel atau tradisi..." class="w-full bg-[#18120e] text-gray-200 border border-gold-500/30 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-gold-400">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-sm"></i>
-                </div>
-            </div>
-
-            <!-- Articles Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articleGrid">
-                <!-- Dynamic Items Inserted via JS -->
-            </div>
-
+            <h2 class="font-serif text-3xl font-bold text-white">Artikel & Tradisi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articleGrid"></div>
         </div>
     </section>
 
+    <!-- SOSIAL MEDIA -->
     <section id="sosmed" class="py-20 bg-darkwood border-t border-gold-500/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase">
-                    <i class="fa-solid fa-[#121212]"></i> Koneksi Digital
-                </span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Jejaring Sosial Media MBAH GIMBAL</h2>
-                <p class="text-gray-400 text-sm">Ikuti pembaruan rutin, live dokumentasi tradisi, dan vlog traveling di platform pilihan Anda.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- YouTube Card -->
-                <a href="https://youtube.com" target="_blank" class="bg-[#121212] p-6 rounded-2xl border border-red-500/20 hover:border-red-500/60 transition-all hover:-translate-y-1 group">
-                    <div class="w-12 h-12 rounded-xl bg-red-600/10 text-red-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-youtube"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition-colors">YouTube Channel</h3>
-                    <p class="text-xs text-gray-400 mt-1">Dokumentasi Video Budaya & Travel Vlog Eksklusif.</p>
-                    <span class="inline-flex items-center gap-1 text-xs text-red-400 font-semibold mt-4">
-                        Subscribe Sekarang <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </span>
-                </a>
-
-                <!-- Instagram Card -->
-                <a href="https://instagram.com" target="_blank" class="bg-[#121212] p-6 rounded-2xl border border-pink-500/20 hover:border-pink-500/60 transition-all hover:-translate-y-1 group">
-                    <div class="w-12 h-12 rounded-xl bg-pink-600/10 text-pink-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white group-hover:text-pink-400 transition-colors">Instagram</h3>
-                    <p class="text-xs text-gray-400 mt-1">Galeri Foto Harian, Reels Tradisi & Stories Tempat Wisata.</p>
-                    <span class="inline-flex items-center gap-1 text-xs text-pink-400 font-semibold mt-4">
-                        Follow @mbahgimbal <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </span>
-                </a>
-
-                <!-- TikTok Card -->
-                <a href="https://tiktok.com" target="_blank" class="bg-[#121212] p-6 rounded-2xl border border-cyan-500/20 hover:border-cyan-500/60 transition-all hover:-translate-y-1 group">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">TikTok</h3>
-                    <p class="text-xs text-gray-400 mt-1">Cuplikan Singkat Edukasi Budaya & Tips Traveling.</p>
-                    <span class="inline-flex items-center gap-1 text-xs text-cyan-400 font-semibold mt-4">
-                        Ikuti di TikTok <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </span>
-                </a>
-
-                <!-- Facebook Card -->
-                <a href="https://facebook.com" target="_blank" class="bg-[#121212] p-6 rounded-2xl border border-blue-500/20 hover:border-blue-500/60 transition-all hover:-translate-y-1 group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600/10 text-blue-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-facebook"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Facebook Community</h3>
-                    <p class="text-xs text-gray-400 mt-1">Diskusi Komunitas Budaya & Info Kegiatan Lapangan.</p>
-                    <span class="inline-flex items-center gap-1 text-xs text-blue-400 font-semibold mt-4">
-                        Gabung Komunitas <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </span>
-                </a>
-
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-6">
+            <h2 class="font-serif text-3xl font-bold text-white">Jejaring Sosial Media</h2>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="https://instagram.com" target="_blank" class="px-6 py-3 bg-pink-600/10 border border-pink-500 text-pink-400 font-semibold rounded-xl"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://youtube.com" target="_blank" class="px-6 py-3 bg-red-600/10 border border-red-500 text-red-400 font-semibold rounded-xl"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="px-6 py-3 bg-emerald-600/10 border border-emerald-500 text-emerald-400 font-semibold rounded-xl"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <section id="kontak" class="py-20 bg-[#121212] relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <!-- Info Column -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block">
-                        <i class="fa-solid fa-envelope-open-text"></i> Mari Berkolaborasi
-                    </span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Hubungi Mbah Gimbal</h2>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Membuka peluang kerja sama untuk Liputan Kebudayaan, Event Ritual Adat, Pemandu Wisata Budaya, Undangan Pembicara/Praktisi, maupun Sponsor Pembuatan Konten Wisata Nusantara.
-                    </p>
-
-                    <div class="space-y-4 pt-2">
-                        <!-- Direct WhatsApp Button -->
-                        <a href="https://wa.me/6281234567890?text=Halo%20Mbah%20Gimbal,%20saya%20tertarik%20untuk%20berkolaborasi" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-4 rounded-xl flex items-center justify-center gap-3 shadow-lg transition-all">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            <span>Chat Langsung via WhatsApp</span>
-                        </a>
-
-                        <div class="bg-[#18120e] p-4 rounded-xl border border-gold-500/20 flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400">Email Resmi</p>
-                                <p class="text-sm font-semibold text-white">kontak@mbahgimbal.id</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#18120e] p-4 rounded-xl border border-gold-500/20 flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400">Domisili / Markas Budaya</p>
-                                <p class="text-sm font-semibold text-white">Jawa Tengah & DI Yogyakarta, Indonesia</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form Column -->
-                <div class="lg:col-span-7 bg-[#18120e] p-6 sm:p-8 rounded-3xl border border-gold-500/20 shadow-2xl">
-                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-gold-400"></i> Kirim Pesan / Penawaran
-                    </h3>
-                    
-                    <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-gray-300 mb-1">Nama Lengkap</label>
-                                <input type="text" required placeholder="Masukkan nama Anda" class="w-full bg-[#121212] text-gray-200 border border-gold-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold-400">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-gray-300 mb-1">Email / WhatsApp</label>
-                                <input type="text" required placeholder="Nomor/Email kontak" class="w-full bg-[#121212] text-gray-200 border border-gold-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold-400">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-1">Subjek / Topik Kerjasama</label>
-                            <select class="w-full bg-[#121212] text-gray-200 border border-gold-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold-400">
-                                <option>Liputan Acara Budaya / Adat</option>
-                                <option>Pemandu Tour / Traveling</option>
-                                <option>Undangan Pembicara / Nara Sumber</option>
-                                <option>Kerjasama Sponsor / Content</option>
-                                <option>Lainnya</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-1">Pesan Anda</label>
-                            <textarea rows="4" required placeholder="Tuliskan detail pesan atau rencana kolaborasi..." class="w-full bg-[#121212] text-gray-200 border border-gold-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold-400"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-bold text-sm hover:from-gold-400 hover:to-amber-500 transition-all shadow-lg">
-                            Kirim Pesan Sekarang
-                        </button>
-                    </form>
-                </div>
-
-            </div>
+    <!-- KONTAK -->
+    <section id="kontak" class="py-20 bg-[#121212]">
+        <div class="max-w-3xl mx-auto px-4 text-center space-y-6">
+            <h2 class="font-serif text-3xl font-bold text-white">Hubungi Mbah Gimbal</h2>
+            <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Chat Langsung via WhatsApp</span>
+            </a>
         </div>
     </section>
 
-    <footer class="bg-black py-12 border-t border-gold-500/20 text-center sm:text-left">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-culture font-bold text-xs">MG</div>
-                <span class="text-sm font-semibold text-gray-300">© 2026 MBAH GIMBAL. All Rights Reserved.</span>
+    <!-- PANEL ADMIN TERSEMBUNYI (Hanya muncul saat tekan Ctrl + Shift + A) -->
+    <div id="secretAdminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="w-full max-w-xl bg-[#18120e] border border-yellow-500/30 rounded-3xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-yellow-500/20 pb-4">
+                <h3 class="text-xl font-bold text-yellow-400"><i class="fa-solid fa-user-secret"></i> Panel Admin Rahasia Mbah Gimbal</h3>
+                <button onclick="toggleSecretAdmin()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
-            <p class="text-xs text-gray-500">
-                Dedikasi untuk Kebudayaan Nusantara & Pelestarian Adat Tradisi Indonesia.
-            </p>
-        </div>
-    </footer>
-
-    
-    <!-- Floating Admin Button for Quick Access -->
-    <button onclick="toggleAdminDrawer()" class="fixed bottom-6 right-6 z-30 bg-gradient-to-r from-gold-500 to-amber-600 text-black w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform gold-border-glow" title="Upload & Kelola Konten Baru">
-        <i class="fa-solid fa-pen-to-square text-xl"></i>
-    </button>
-
-    <!-- Admin Drawer Modal -->
-    <div id="adminDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex justify-end">
-        <div class="w-full max-w-md bg-[#18120e] h-full overflow-y-auto p-6 border-l border-gold-500/30 flex flex-col justify-between">
-            <div class="space-y-6">
-                <div class="flex items-center justify-between border-b border-gold-500/20 pb-4">
-                    <h3 class="font-serif text-xl font-bold text-gold-400 flex items-center gap-2">
-                        <i class="fa-solid fa-sliders"></i> Panel Kelola Konten
-                    </h3>
-                    <button onclick="toggleAdminDrawer()" class="text-gray-400 hover:text-white p-2">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <p class="text-xs text-gray-400">
-                    Gunakan panel ini untuk mengunggah atau menambahkan konten foto, video, dan artikel baru secara langsung ke website Mbah Gimbal. (Tersimpan otomatis di browser).
-                </p>
-
-                <!-- Admin Tabs -->
-                <div class="flex border-b border-gold-500/20 text-xs font-semibold">
-                    <button onclick="switchAdminTab('foto')" id="tabFotoBtn" class="flex-1 py-2 text-center text-gold-400 border-b-2 border-gold-400">Tambah Foto</button>
-                    <button onclick="switchAdminTab('video')" id="tabVideoBtn" class="flex-1 py-2 text-center text-gray-400 hover:text-gold-400">Tambah Video</button>
-                    <button onclick="switchAdminTab('artikel')" id="tabArtikelBtn" class="flex-1 py-2 text-center text-gray-400 hover:text-gold-400">Tambah Artikel</button>
-                </div>
-
-                <!-- Form Tambah Foto -->
-                <form id="addPhotoForm" onsubmit="handleAddPhoto(event)" class="space-y-3">
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Judul Foto</label>
-                        <input type="text" id="photoTitle" required placeholder="Contoh: Upacara Ritual Kasada Bromo" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Kategori</label>
-                        <select id="photoCategory" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                            <option value="kebudayaan">Kebudayaan & Adat</option>
-                            <option value="pariwisata">Pariwisata & Alam</option>
-                            <option value="tradisi">Dokumentasi Tradisi</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">URL Gambar / Foto</label>
-                        <input type="url" id="photoUrl" required placeholder="https://images.unsplash.com/..." class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Keterangan / Lokasi</label>
-                        <input type="text" id="photoDesc" required placeholder="Contoh: Bromo, Jawa Timur" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <button type="submit" class="w-full py-2.5 bg-gold-500 text-black font-bold text-xs rounded-lg hover:bg-gold-400">Simpan Foto Baru</button>
-                </form>
-
-                <!-- Form Tambah Video -->
-                <form id="addVideoForm" onsubmit="handleAddVideo(event)" class="space-y-3 hidden">
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Judul Video</label>
-                        <input type="text" id="videoTitle" required placeholder="Contoh: Eksplorasi Candi & Tradisi Lokal" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Kategori Video</label>
-                        <select id="videoCategory" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                            <option value="budaya">Video Budaya</option>
-                            <option value="traveling">Video Traveling</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">URL Embed Video YouTube (Iframe Link / URL)</label>
-                        <input type="text" id="videoUrl" required placeholder="https://www.youtube.com/embed/..." class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <button type="submit" class="w-full py-2.5 bg-gold-500 text-black font-bold text-xs rounded-lg hover:bg-gold-400">Simpan Video Baru</button>
-                </form>
-
-                <!-- Form Tambah Artikel -->
-                <form id="addArticleForm" onsubmit="handleAddArticle(event)" class="space-y-3 hidden">
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Judul Artikel</label>
-                        <input type="text" id="articleTitle" required placeholder="Contoh: Mitos & Makna Adat..." class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Tag / Kategori</label>
-                        <input type="text" id="articleTag" required placeholder="Adat Tradisi / Wisata" class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">URL Cover Sampul</label>
-                        <input type="url" id="articleImage" required placeholder="https://images.unsplash.com/..." class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-gray-300 mb-1">Isi Lengkap Artikel</label>
-                        <textarea id="articleContent" rows="4" required placeholder="Tuliskan cerita kebudayaan atau panduan wisata di sini..." class="w-full bg-[#121212] text-xs text-gray-200 border border-gold-500/30 rounded-lg p-2.5"></textarea>
-                    </div>
-                    <button type="submit" class="w-full py-2.5 bg-gold-500 text-black font-bold text-xs rounded-lg hover:bg-gold-400">Terbitkan Artikel</button>
-                </form>
+            <!-- Edit Profil -->
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">1. Edit Judul & Profil Utama</h4>
+                <input type="text" id="editSiteTitle" placeholder="Judul Website" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <textarea id="editBio" placeholder="Bio / Keterangan Profil" rows="2" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3"></textarea>
+                <input type="url" id="editProfilePic" placeholder="URL Foto Profil" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <button onclick="saveConfig()" class="w-full py-2.5 bg-yellow-500 text-black font-bold text-xs rounded-lg">Simpan Perubahan Profil</button>
             </div>
 
-            <div class="pt-6 border-t border-gold-500/20 text-center">
-                <button onclick="resetDefaultData()" class="text-xs text-red-400 hover:underline">Reset Data Ke Pengaturan Awal</button>
+            <!-- Tambah Foto -->
+            <div class="space-y-3 pt-4 border-t border-yellow-500/20">
+                <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-wider">2. Tambah Galeri Foto Baru</h4>
+                <input type="text" id="photoTitle" placeholder="Judul Foto" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <select id="photoCategory" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                    <option value="kebudayaan">Kebudayaan</option>
+                    <option value="pariwisata">Pariwisata</option>
+                </select>
+                <input type="url" id="photoUrl" placeholder="URL Gambar Foto" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <input type="text" id="photoDesc" placeholder="Lokasi (Contoh: Yogyakarta)" class="w-full bg-[#121212] text-xs text-gray-200 border border-yellow-500/30 rounded-lg p-3">
+                <button onclick="addPhoto()" class="w-full py-2.5 bg-yellow-500 text-black font-bold text-xs rounded-lg">Tambah Foto Baru</button>
+            </div>
+
+            <div class="text-center pt-2">
+                <button onclick="localStorage.clear(); alert('Data direset!'); location.reload();" class="text-xs text-red-400 hover:underline">Reset Semua Data ke Default</button>
             </div>
         </div>
-    </div>
-
-    <!-- Photo Lightbox Modal -->
-    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400"><i class="fa-solid fa-xmark"></i></button>
-        <div class="max-w-4xl w-full text-center space-y-4">
-            <img id="lightboxImage" src="" alt="" class="max-h-[80vh] mx-auto rounded-xl object-contain border border-gold-500/30 shadow-2xl">
-            <div>
-                <h3 id="lightboxTitle" class="text-xl font-bold text-white font-serif"></h3>
-                <p id="lightboxDesc" class="text-sm text-gold-400 mt-1"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Full Article Modal -->
-    <div id="articleModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-[#18120e] border border-gold-500/30 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative">
-            <button onclick="closeArticleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
-            <span id="modalArticleTag" class="px-3 py-1 bg-gold-500/20 text-gold-400 text-xs font-semibold rounded-full border border-gold-500/30 inline-block"></span>
-            <h2 id="modalArticleTitle" class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight"></h2>
-            <img id="modalArticleImage" src="" class="w-full h-64 object-cover rounded-2xl border border-gold-500/20">
-            <div id="modalArticleContent" class="text-gray-300 text-sm leading-relaxed whitespace-pre-line"></div>
-        </div>
-    </div>
-
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed top-24 right-6 z-50 bg-gold-500 text-black px-5 py-3 rounded-xl font-semibold text-xs shadow-2xl hidden items-center gap-2">
-        <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMsg">Berhasil disimpan!</span>
     </div>
 
     <script>
-        // Default Mock Data
-        const defaultPhotos = [
-            {
-                id: 1,
-                title: "Upacara Adat Ritual Tradisi",
-                category: "kebudayaan",
-                image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
-                desc: "Yogyakarta, Indonesia"
-            },
-            {
-                id: 2,
-                title: "Keindahan Sunrise Bromo",
-                category: "pariwisata",
-                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-                desc: "Taman Nasional Bromo Tengger Semeru"
-            },
-            {
-                id: 3,
-                title: "Tari Sakral & Seni Gamelan",
-                category: "tradisi",
-                image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
-                desc: "Pagelaran Seni Kebudayaan Lokal"
-            },
-            {
-                id: 4,
-                title: "Jelajah Lembah & Air Terjun",
-                category: "pariwisata",
-                image: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=800&q=80",
-                desc: "Eksplorasi Alam Nusantara"
-            },
-            {
-                id: 5,
-                title: "Kirab Kebudayaan Keraton",
-                category: "kebudayaan",
-                image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
-                desc: "Pawai Adat Tradisional"
-            },
-            {
-                id: 6,
-                title: "Seni Kerajinan Batik & Ukir",
-                category: "tradisi",
-                image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
-                desc: "Kearifan Lokal Mbah Gimbal"
-            }
+        // Data Storage & Render Logic
+        let config = JSON.parse(localStorage.getItem('mg_config')) || {
+            title: "MBAH GIMBAL - Kebudayaan, Adat Tradisi & Pariwisata Nusantara",
+            brandName: "MBAH GIMBAL",
+            badge: "Official Portfolio & Cultural Hub",
+            heroTitle: "Menjaga Tradisi, Merawat Budaya, Menjelajah Nusantara",
+            bio: "Salam Budaya! Saya Mbah Gimbal, praktisi kebudayaan, pencinta tradisi adat, serta penggiat pariwisata Nusantara.",
+            profilePic: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+        };
+
+        let photos = JSON.parse(localStorage.getItem('mg_photos')) || [
+            { id: 1, title: "Upacara Ritual Adat Tradisi", category: "kebudayaan", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80", desc: "Yogyakarta" }
         ];
 
-        const defaultVideos = [
-            {
-                id: 1,
-                title: "Dokumentasi Ritual Adat Tradisi Mbah Gimbal",
-                category: "budaya",
-                embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                id: 2,
-                title: "Jelajah Wisata Tersembunyi Surga Alam Nusantara",
-                category: "traveling",
-                embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                id: 3,
-                title: "Filosofi Keris & Pusaka Warisan Leluhur",
-                category: "budaya",
-                embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            }
+        let videos = JSON.parse(localStorage.getItem('mg_videos')) || [
+            { id: 1, title: "Dokumentasi Ritual Adat Mbah Gimbal", embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
         ];
 
-        const defaultArticles = [
-            {
-                id: 1,
-                title: "Menyelami Makna Simbolis Filosofi Kebudayaan Adat Nusantara",
-                tag: "Adat Tradisi",
-                image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
-                content: "Kebudayaan dan adat tradisi Nusantara menyimpan lembaran hikmah yang begitu luas. Setiap simbol dalam busana adat, perangkat ritual, maupun musik gamelan memiliki kedalaman filosofi hidup...\n\nMbah Gimbal secara aktif membagikan pemahaman pentingnya menjaga nilai-nilai kebudayaan adat ini agar tetap relevan dan dipahami secara benar oleh generasi penerus."
-            },
-            {
-                id: 2,
-                title: "Panduan Traveling Berbasis Kebudayaan & Kearifan Lokal",
-                tag: "Destinasi Wisata",
-                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-                content: "Traveling tidak sekadar berkunjung dan berfoto di tempat indah, melainkan tentang bagaimana kita menyatu dan menghormati tradisi masyarakat setempat...\n\nDalam catatan eksplorasi wisata kali ini, Mbah Gimbal membagikan beberapa etika dan panduan saat mengunjungi desa adat dan situs sejarah lokal."
-            },
-            {
-                id: 3,
-                title: "Keajaiban Seni Tradisional Sebagai Daya Tarik Pariwisata",
-                tag: "Seni & Kuliner",
-                image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
-                content: "Seni pertunjukan tradisional seperti wayang, tari sakral, dan musik tradisional memiliki daya tarik magis tersendiri bagi wisatawan lokal maupun mancanegara..."
-            }
+        let articles = JSON.parse(localStorage.getItem('mg_articles')) || [
+            { id: 1, title: "Menyelami Makna Filosofi Budaya Nusantara", tag: "Adat Tradisi", content: "Kebudayaan Nusantara menyimpan hikmah mendalam..." }
         ];
 
-        // Load or initialize localStorage
-        let photos = JSON.parse(localStorage.getItem('mg_photos')) || defaultPhotos;
-        let videos = JSON.parse(localStorage.getItem('mg_videos')) || defaultVideos;
-        let articles = JSON.parse(localStorage.getItem('mg_articles')) || defaultArticles;
+        // Terapkan ke Tampilan Utama
+        document.getElementById('metaTitle').innerText = config.title;
+        document.getElementById('navBrandTitle').innerText = config.brandName;
+        document.getElementById('heroBadge').innerText = config.badge;
+        document.getElementById('heroMainTitle').innerHTML = config.heroTitle;
+        document.getElementById('profileBioDisplay').innerText = config.bio;
+        document.getElementById('profileImageDisplay').src = config.profilePic;
+        document.getElementById('profileNameDisplay').innerText = config.brandName;
 
-        // Render Functions
-        function renderPhotos(filter = 'all') {
-            const grid = document.getElementById('photoGrid');
-            grid.innerHTML = '';
-            
-            const filtered = filter === 'all' ? photos : photos.filter(p => p.category === filter);
-            
-            filtered.forEach(photo => {
-                const card = document.createElement('div');
-                card.className = 'group relative overflow-hidden rounded-2xl bg-[#18120e] border border-gold-500/20 cursor-pointer shadow-lg hover:border-gold-500/60 transition-all duration-300';
-                card.onclick = () => openLightbox(photo.image, photo.title, photo.desc);
-                card.innerHTML = `
-                    <div class="h-64 overflow-hidden">
-                        <img src="${photo.image}" alt="${photo.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
+        // Isi Form Admin
+        document.getElementById('editSiteTitle').value = config.title;
+        document.getElementById('editBio').value = config.bio;
+        document.getElementById('editProfilePic').value = config.profilePic;
+
+        // Render Galeri Foto
+        const photoGrid = document.getElementById('photoGrid');
+        photos.forEach(p => {
+            photoGrid.innerHTML += `
+                <div class="rounded-2xl bg-[#18120e] border border-gold-500/20 overflow-hidden shadow-lg">
+                    <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
                     <div class="p-5">
-                        <span class="text-[10px] uppercase tracking-wider font-semibold text-gold-400 bg-gold-500/10 px-2.5 py-1 rounded-md border border-gold-500/20">${photo.category}</span>
-                        <h3 class="text-base font-bold text-white mt-2 group-hover:text-gold-400 transition-colors">${photo.title}</h3>
-                        <p class="text-xs text-gray-400 mt-1"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i>${photo.desc}</p>
+                        <span class="text-[10px] uppercase font-semibold text-gold-400 bg-gold-500/10 px-2.5 py-1 rounded-md">${p.category}</span>
+                        <h3 class="text-base font-bold text-white mt-2">${p.title}</h3>
+                        <p class="text-xs text-gray-400 mt-1"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i>${p.desc}</p>
                     </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+                </div>`;
+        });
 
-        function renderVideos(filter = 'all') {
-            const grid = document.getElementById('videoGrid');
-            grid.innerHTML = '';
+        // Render Video
+        const videoGrid = document.getElementById('videoGrid');
+        videos.forEach(v => {
+            videoGrid.innerHTML += `
+                <div class="bg-[#121212] rounded-2xl border border-gold-500/20 overflow-hidden shadow-xl">
+                    <div class="aspect-video w-full bg-black"><iframe class="w-full h-full" src="${v.embedUrl}" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="p-4"><h3 class="text-sm font-bold text-white">${v.title}</h3></div>
+                </div>`;
+        });
 
-            const filtered = filter === 'all' ? videos : videos.filter(v => v.category === filter);
+        // Render Artikel
+        const articleGrid = document.getElementById('articleGrid');
+        articles.forEach(a => {
+            articleGrid.innerHTML += `
+                <div class="bg-[#18120e] rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg p-6 space-y-3">
+                    <span class="px-2.5 py-1 bg-gold-500/10 text-gold-400 text-xs font-semibold rounded-md">${a.tag}</span>
+                    <h3 class="text-lg font-bold text-white font-serif">${a.title}</h3>
+                    <p class="text-xs text-gray-400 line-clamp-3">${a.content}</p>
+                </div>`;
+        });
 
-            filtered.forEach(video => {
-                const card = document.createElement('div');
-                card.className = 'bg-[#121212] rounded-2xl border border-gold-500/20 overflow-hidden shadow-xl space-y-3';
-                card.innerHTML = `
-                    <div class="aspect-video w-full bg-black">
-                        <iframe class="w-full h-full" src="${video.embedUrl}" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-[10px] uppercase font-semibold text-gold-400 bg-gold-500/10 px-2 py-0.5 rounded border border-gold-500/20">${video.category}</span>
-                        <h3 class="text-sm font-bold text-white mt-1">${video.title}</h3>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function renderArticles(items = articles) {
-            const grid = document.getElementById('articleGrid');
-            grid.innerHTML = '';
-
-            items.forEach(article => {
-                const card = document.createElement('div');
-                card.className = 'bg-[#18120e] rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg hover:border-gold-400/50 transition-all flex flex-col justify-between';
-                card.innerHTML = `
-                    <div>
-                        <div class="h-48 overflow-hidden">
-                            <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <span class="px-2.5 py-1 bg-gold-500/10 text-gold-400 text-xs font-semibold rounded-md border border-gold-500/20">${article.tag}</span>
-                            <h3 class="text-lg font-bold text-white font-serif leading-snug hover:text-gold-400 cursor-pointer" onclick="openArticleModal(${article.id})">${article.title}</h3>
-                            <p class="text-xs text-gray-400 line-clamp-3">${article.content}</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openArticleModal(${article.id})" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center gap-2">
-                            Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Filtering
-        function filterPhotos(cat) {
-            document.querySelectorAll('.photo-filter-btn').forEach(btn => {
-                btn.classList.remove('bg-gold-500', 'text-black');
-                btn.classList.add('bg-[#18120e]', 'text-gray-300');
-            });
-            event.target.classList.add('bg-gold-500', 'text-black');
-            event.target.classList.remove('bg-[#18120e]', 'text-gray-300');
-            renderPhotos(cat);
-        }
-
-        function filterVideos(cat) {
-            document.querySelectorAll('.video-filter-btn').forEach(btn => {
-                btn.classList.remove('bg-gold-500', 'text-black');
-                btn.classList.add('bg-[#121212]', 'text-gray-300');
-            });
-            event.target.classList.add('bg-gold-500', 'text-black');
-            event.target.classList.remove('bg-[#121212]', 'text-gray-300');
-            renderVideos(cat);
-        }
-
-        function searchArticles() {
-            const query = document.getElementById('articleSearch').value.toLowerCase();
-            const filtered = articles.filter(a => a.title.toLowerCase().includes(query) || a.tag.toLowerCase().includes(query) || a.content.toLowerCase().includes(query));
-            renderArticles(filtered);
-        }
-
-        // Modals & Drawers Logic
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        function toggleAdminDrawer() {
-            const drawer = document.getElementById('adminDrawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        function switchAdminTab(tab) {
-            document.getElementById('addPhotoForm').classList.add('hidden');
-            document.getElementById('addVideoForm').classList.add('hidden');
-            document.getElementById('addArticleForm').classList.add('hidden');
-
-            document.getElementById('tabFotoBtn').className = "flex-1 py-2 text-center text-gray-400 hover:text-gold-400";
-            document.getElementById('tabVideoBtn').className = "flex-1 py-2 text-center text-gray-400 hover:text-gold-400";
-            document.getElementById('tabArtikelBtn').className = "flex-1 py-2 text-center text-gray-400 hover:text-gold-400";
-
-            if (tab === 'foto') {
-                document.getElementById('addPhotoForm').classList.remove('hidden');
-                document.getElementById('tabFotoBtn').className = "flex-1 py-2 text-center text-gold-400 border-b-2 border-gold-400 font-bold";
-            } else if (tab === 'video') {
-                document.getElementById('addVideoForm').classList.remove('hidden');
-                document.getElementById('tabVideoBtn').className = "flex-1 py-2 text-center text-gold-400 border-b-2 border-gold-400 font-bold";
-            } else if (tab === 'artikel') {
-                document.getElementById('addArticleForm').classList.remove('hidden');
-                document.getElementById('tabArtikelBtn').className = "flex-1 py-2 text-center text-gold-400 border-b-2 border-gold-400 font-bold";
+        // Shortcut Rahasia (Tekan Ctrl + Shift + A di keyboard)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'A') {
+                e.preventDefault();
+                toggleSecretAdmin();
             }
+        });
+
+        function toggleSecretAdmin() {
+            const modal = document.getElementById('secretAdminModal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
         }
 
-        // Lightbox
-        function openLightbox(img, title, desc) {
-            document.getElementById('lightboxImage').src = img;
-            document.getElementById('lightboxTitle').innerText = title;
-            document.getElementById('lightboxDesc').innerText = desc;
-            document.getElementById('lightboxModal').classList.remove('hidden');
-            document.getElementById('lightboxModal').classList.add('flex');
+        function saveConfig() {
+            config.title = document.getElementById('editSiteTitle').value;
+            config.bio = document.getElementById('editBio').value;
+            config.profilePic = document.getElementById('editProfilePic').value;
+            localStorage.setItem('mg_config', JSON.stringify(config));
+            alert('Profil berhasil disimpan!');
+            location.reload();
         }
 
-        function closeLightbox() {
-            document.getElementById('lightboxModal').classList.add('hidden');
-            document.getElementById('lightboxModal').classList.remove('flex');
-        }
-
-        // Article Modal
-        function openArticleModal(id) {
-            const article = articles.find(a => a.id === id);
-            if (!article) return;
-
-            document.getElementById('modalArticleTag').innerText = article.tag;
-            document.getElementById('modalArticleTitle').innerText = article.title;
-            document.getElementById('modalArticleImage').src = article.image;
-            document.getElementById('modalArticleContent').innerText = article.content;
-
-            document.getElementById('articleModal').classList.remove('hidden');
-            document.getElementById('articleModal').classList.add('flex');
-        }
-
-        function closeArticleModal() {
-            document.getElementById('articleModal').classList.add('hidden');
-            document.getElementById('articleModal').classList.remove('flex');
-        }
-
-        // Form Handlers
-        function handleAddPhoto(e) {
-            e.preventDefault();
-            const newPhoto = {
+        function addPhoto() {
+            photos.unshift({
                 id: Date.now(),
                 title: document.getElementById('photoTitle').value,
                 category: document.getElementById('photoCategory').value,
                 image: document.getElementById('photoUrl').value,
                 desc: document.getElementById('photoDesc').value
-            };
-            photos.unshift(newPhoto);
+            });
             localStorage.setItem('mg_photos', JSON.stringify(photos));
-            renderPhotos();
-            showToast('Foto Kebudayaan/Wisata Berhasil Ditambahkan!');
-            e.target.reset();
-            toggleAdminDrawer();
+            alert('Foto baru ditambahkan!');
+            location.reload();
         }
-
-        function handleAddVideo(e) {
-            e.preventDefault();
-            const newVideo = {
-                id: Date.now(),
-                title: document.getElementById('videoTitle').value,
-                category: document.getElementById('videoCategory').value,
-                embedUrl: document.getElementById('videoUrl').value
-            };
-            videos.unshift(newVideo);
-            localStorage.setItem('mg_videos', JSON.stringify(videos));
-            renderVideos();
-            showToast('Video Berhasil Ditambahkan!');
-            e.target.reset();
-            toggleAdminDrawer();
-        }
-
-        function handleAddArticle(e) {
-            e.preventDefault();
-            const newArticle = {
-                id: Date.now(),
-                title: document.getElementById('articleTitle').value,
-                tag: document.getElementById('articleTag').value,
-                image: document.getElementById('articleImage').value,
-                content: document.getElementById('articleContent').value
-            };
-            articles.unshift(newArticle);
-            localStorage.setItem('mg_articles', JSON.stringify(articles));
-            renderArticles();
-            showToast('Artikel Baru Berhasil Diterbitkan!');
-            e.target.reset();
-            toggleAdminDrawer();
-        }
-
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            showToast('Pesan Anda telah terkirim ke Mbah Gimbal!');
-            e.target.reset();
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMsg').innerText = msg;
-            toast.classList.remove('hidden');
-            toast.classList.add('flex');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-                toast.classList.remove('flex');
-            }, 3000);
-        }
-
-        function resetDefaultData() {
-            localStorage.removeItem('mg_photos');
-            localStorage.removeItem('mg_videos');
-            localStorage.removeItem('mg_articles');
-            photos = defaultPhotos;
-            videos = defaultVideos;
-            articles = defaultArticles;
-            renderPhotos();
-            renderVideos();
-            renderArticles();
-            showToast('Data dikembalikan ke posisi awal.');
-            toggleAdminDrawer();
-        }
-
-        // Initialize App on Load
-        window.onload = function() {
-            renderPhotos();
-            renderVideos();
-            renderArticles();
-        };
     </script>
 </body>
 </html>
